@@ -12,17 +12,17 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($users as $user)
+            @foreach ($usuarios as $user)
             <tr>
               <td>{{$user->id}}</td>
               <td>{{$user->name}}</td>
               <td>
                 @foreach ($user->roles as $role)
-                  {{$role->name}}&nbsp;
+                  {{$role->name}}
                 @endforeach
               </td>
-              <td><a href="{{route('createRolUser',$user->id)}}">Añadir un rol</a></td>
-              <td><a href="{{route('removeRolUser',$user->id)}}">Quitar un rol</a></td>
+              <td><a href="{{route('addRole',$user->id)}}">Añadir rol</a></td>
+              <td><a href="{{route('removeRole',$user->id)}}">Quitar rol</a></td>
             </tr>
             @endforeach
           </tbody>
