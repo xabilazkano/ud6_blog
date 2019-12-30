@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class GestorController extends Controller
+class EditorController extends Controller
 {
 	public function __construct(){
-		$this->middleware('role:gestor');
+		$this->middleware('role:editor');
 	}
 
 	public function index(){
-		return "Soy gestor";
+		return view('home');
 	}
 }

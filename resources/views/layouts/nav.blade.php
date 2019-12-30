@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand" href="{{route('welcome')}}">Xabi Lazkano Iturrioz</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
@@ -19,9 +19,14 @@
           <a class="nav-link" href="{{route('register')}}">Register</a>
         </li>
         @else
+        @if (Auth::user()->hasRole("editor"))
         <li>
           <a class="nav-link" href="{{route('posts.index')}}">My posts</a>
         </li>
+        @endif
+        @if (Auth::user()->hasRole("admin"))
+        <a class="nav-link" href="{{route('admin')}}">Admin panel</a>
+        @endif
         <li class="nav-item dropdown mx-1 mx-lg-1">
           <a id="navbarDropdown" class="nav-link dropdown-toggle js-scroll-trigger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->name }} <span class="caret"></span>
@@ -30,17 +35,17 @@
             <a class="dropdown-item" href="{{ route('home')}}"></a>
             <a class="dropdown-item" href="#">Delete user</a>
             <a class="dropdown-item" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">
-              Logout
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" >
-              @csrf
-            </form>
-          </div>
-        </li>
-        @endguest
-      </ul>
-    </div>
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            Logout
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+            @csrf
+          </form>
+        </div>
+      </li>
+      @endguest
+    </ul>
   </div>
+</div>
 </nav>

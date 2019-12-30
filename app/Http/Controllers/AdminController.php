@@ -17,7 +17,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return 'Soy administrador';
+        return view('admin');
     }
 
     /**
