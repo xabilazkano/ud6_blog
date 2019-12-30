@@ -12,6 +12,7 @@
 
 	<!-- Custom styles for this template -->
 	<link href="/css/blog-post.css" rel="stylesheet">
+	<link href="{{url('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 
 	<!-- Bootstrap core JavaScript -->
 	<script src="/js/jquery.min.js"></script>

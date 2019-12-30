@@ -19,6 +19,9 @@
           <a class="nav-link" href="{{route('register')}}">Register</a>
         </li>
         @else
+        <li>
+          <a class="nav-link" href="{{route('posts.index')}}">My posts</a>
+        </li>
         <li class="nav-item dropdown mx-1 mx-lg-1">
           <a id="navbarDropdown" class="nav-link dropdown-toggle js-scroll-trigger" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->name }} <span class="caret"></span>
