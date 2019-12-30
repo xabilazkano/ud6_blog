@@ -19,7 +19,7 @@
     <hr>
     @isset($post->image)
     <!-- Preview Image -->
-    <img class="img-fluid rounded" src="{{asset('$post->image')}}" alt="">
+    <img class="img-fluid rounded" src="{{url('img/' . $post->image)}}" alt="">
     @endisset
     <hr>
     <!-- Post Content -->
