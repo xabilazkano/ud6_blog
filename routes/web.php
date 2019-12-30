@@ -19,3 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes(['verify' => true]);
+
+Route::get('/admin','AdminController@index')->name('admin');
+
+Route::get('/gestor', 'GestorController@index')->name('gestor');
