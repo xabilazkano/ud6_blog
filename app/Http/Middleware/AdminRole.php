@@ -18,7 +18,7 @@ class AdminRole
         if (auth()->user()->hasRole('admin'))
             return $next($request);
         else
-            return redirect('/');
+            return redirect('/editor');
         
 
 

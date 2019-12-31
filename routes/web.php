@@ -23,7 +23,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/admin','AdminController@index')->name('admin');
 
-Route::get('/gestor', 'GestorController@index')->name('gestor');
+Route::get('/editor', 'EditorController@index')->name('editor');
 
 Route::get('/addRole/{id}', 'AdminController@addRole')->name('addRole');
 Route::get('/removeRole/{id}', 'AdminController@removeRole')->name('removeRole');
